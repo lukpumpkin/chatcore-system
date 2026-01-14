@@ -1,12 +1,14 @@
 {
   "name": "chatcore-system",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Core de chatbot modular para empresas",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "dev": "node src/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": ["chatbot", "core", "automation"],
+  "author": "Luk",
+  "license": "MIT"
 }
