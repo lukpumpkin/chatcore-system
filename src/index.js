@@ -1,2 +1,11 @@
-console.log("chatcoresystem rodando");
-console.log("ChatCoreSystem iniciado 🚀");
+import { ChatCore } from "./core/ChatCore.js";
+
+const chat = new ChatCore();
+
+console.log("ChatCoreSystem iniciado ");
+
+const userMessage = "oi";
+const botResponse = chat.handleMessage(userMessage);
+
+console.log("user:", userMessage);
+console.log("bot:", botResponse);
