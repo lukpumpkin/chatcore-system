@@ -4,7 +4,7 @@ const chat = new ChatCore();
 
 console.log("ChatCoreSystem iniciado ");
 
-const userMessage = "oi";
+const userMessage = "ajuda";
 const botResponse = chat.handleMessage(userMessage);
 
 console.log("user:", userMessage);
