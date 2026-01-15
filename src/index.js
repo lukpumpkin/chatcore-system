@@ -2,10 +2,16 @@ import { ChatCore } from "./core/ChatCore.js";
 
 const chat = new ChatCore();
 
-console.log("ChatCoreSystem iniciado ");
+const conversation = [
+  { userId: "user1", message: "meu nome é luk" },
+  { userId: "user2", message: "oi" },
+  { userId: "user1", message: "oi" },
+  { userId: "user2", message: "meu nome é ana" },
+  { userId: "user2", message: "oi" }
+];
 
-const userMessage = "ajuda";
-const botResponse = chat.handleMessage(userMessage);
-
-console.log("user:", userMessage);
-console.log("bot:", botResponse);
+for (const { userId, message } of conversation) {
+  const response = chat.handleMessage(userId, message);
+  console.log(`${userId}: ${message}`);
+  console.log(`bot: ${response}`);
+}
