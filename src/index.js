@@ -1,17 +1,11 @@
 import { ChatCore } from "./core/ChatCore.js";
+import { TerminalAdapter } from "./adapters/TerminalAdapter.js";
 
-const chat = new ChatCore();
+const chatCore = new ChatCore();
+const terminal = new TerminalAdapter(chatCore);
 
-const conversation = [
-  { userId: "user1", message: "meu nome é luk" },
-  { userId: "user2", message: "oi" },
-  { userId: "user1", message: "oi" },
-  { userId: "user2", message: "meu nome é ana" },
-  { userId: "user2", message: "oi" }
-];
-
-for (const { userId, message } of conversation) {
-  const response = chat.handleMessage(userId, message);
-  console.log(`${userId}: ${message}`);
-  console.log(`bot: ${response}`);
-}
+// simulação de mensagens
+terminal.send("user1", "oi");
+terminal.send("user1", "ajuda");
+terminal.send("user1", "tchau");
+terminal.send("user1", "xyz");
