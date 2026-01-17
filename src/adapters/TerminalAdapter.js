@@ -3,12 +3,10 @@ export class TerminalAdapter {
     this.chatCore = chatCore;
   }
 
-  send(userId, message) {
-    console.log(`user(${userId}): ${message}`);
-
-    const response = this.chatCore.handleMessage(userId, message);
-
-    console.log(`bot: ${response}`);
+  async send(user, message) {
+    const reply = await this.chatCore.handleMessage(`${user}: ${message}`);
+    console.log(`user(${user}): ${message}`);
+    console.log(`bot: ${reply}`);
   }
 }
 

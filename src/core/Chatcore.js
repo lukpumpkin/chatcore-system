@@ -1,17 +1,13 @@
-import { intentFlow } from "../flows/intentFlow.js";
-import { MemoryStore } from "../storage/memoryStore.js";
+import { AIService } from "../services/AIService.js";
 
 export class ChatCore {
-  constructor() {
-    this.memory = new MemoryStore(); // mantém memória por usuário
-  }
-
-  handleMessage(userId, text) {
-    const session = this.memory.get(userId);
-    // futuramente podemos passar session pro flow para contexto
-    return intentFlow(text);
+  async handleMessage(message) {
+    const text = message.split(":").pop().trim();
+    return await AIService.ask(text);
   }
 }
+
+
 
 
 
