@@ -6,10 +6,11 @@ export class TerminalAdapter {
   send(userId, message) {
     console.log(`user(${userId}): ${message}`);
 
-    const response = this.chatCore.handleMessage(message);
+    const response = this.chatCore.handleMessage(userId, message);
 
     console.log(`bot: ${response}`);
   }
 }
+
 
 

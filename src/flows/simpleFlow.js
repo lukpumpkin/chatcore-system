@@ -1,15 +1,17 @@
+import { responses } from "../config/responses.js";
+
 export function simpleFlow(text) {
-  if (text === "oi" || text === "olá") {
-    return "olá, como posso ajudar?";
+  if (responses.greetings.includes(text)) {
+    return responses.messages.greeting;
   }
 
-  if (text === "ajuda") {
-    return "posso responder: oi, ajuda, tchau";
+  if (responses.farewell.includes(text)) {
+    return responses.messages.farewell;
   }
 
-  if (text === "tchau") {
-    return "até mais 👋";
+  if (responses.help.includes(text)) {
+    return responses.messages.help;
   }
 
-  return "não entendi 😅";
+  return responses.messages.fallback;
 }
